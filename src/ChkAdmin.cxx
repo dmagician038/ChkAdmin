@@ -23,17 +23,11 @@ int main(int argc, char* argv[])
 {
 	bool quiet = false;
 	unsigned long cbSid = SECURITY_MAX_SID_SIZE;
-	// PSID pSid = _alloca(cbSid);
 	void* pSid = _malloca(cbSid);
 	BOOL isAdmin = FALSE;
 
 	if (argc > 1)
 	{
-		//auto csArg = CString(argv[1]).MakeLower();
-		//CT2CA pszConvertedAnsiString(csArg);
-		//std::string strStd(pszConvertedAnsiString);
-		//const std::regex pattern(/*"([\\-/])([Qq])([IiCcKk])"*/R"(([\-\/])?(q)(uick)?)", std::regex_constants::icase);
-
 		if (std::regex_match(std::string(CT2CA(CString(argv[1]))),
 		                     std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase)))
 		{
@@ -68,5 +62,6 @@ int main(int argc, char* argv[])
 	{
 		puts(isAdmin ? "Admin" : "Non-admin");
 	}
+
 	return !isAdmin;
 }

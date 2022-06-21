@@ -25,7 +25,6 @@ int main(int argc, char* argv[])
 	bool quiet = false;
 	bool pause = false;
 	unsigned long cbSid = SECURITY_MAX_SID_SIZE;
-	// PSID pSid = _alloca(cbSid);
 	void* pSid = _malloca(cbSid);
 	BOOL isAdmin = FALSE;
 
@@ -101,54 +100,3 @@ drive:\path\to\%s [-|--|/]<options>
 
 	return !isAdmin;
 }
-
-#pragma region Modified to use regex
-////auto csArg = CString(argv[1]).MakeLower();
-////CT2CA pszConvertedAnsiString(csArg);
-////std::string strStd(pszConvertedAnsiString);
-////const std::regex pattern(/*"([\\-/])([Qq])([IiCcKk])"*/R"(([\-\/])?(q)(uick)?)", std::regex_constants::icase);
-
-//if (std::regex_match(std::string(CT2CA(CString(argv[1]))),
-//                     std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase)))
-//{
-//	quiet = true;
-//}
-//else
-//{
-//	if (!strcmp(argv[1], "/?"))
-//	{
-//		fprintf(stderr, "Usage: %s [/q]\n", argv[0]);
-//		return 0;
-//	}
-//}
-#pragma endregion Modified to use regex
-
-#pragma region Original source
-//#include <malloc.h>
-//#include <stdio.h>
-//#include <windows.h>
-//#pragma comment (lib,"Advapi32.lib")
-//
-//int main(int argc, char** argv) {
-//	BOOL quiet = FALSE;
-//	DWORD cbSid = SECURITY_MAX_SID_SIZE;
-//	PSID pSid = _alloca(cbSid);
-//	BOOL isAdmin;
-//
-//	if (argc > 1) {
-//		if (!strcmp(argv[1], "/q")) quiet = TRUE;
-//		else if (!strcmp(argv[1], "/?")) { fprintf(stderr, "Usage: %s [/q]\n", argv[0]); return 0; }
-//	}
-//
-//	if (!CreateWellKnownSid(WinBuiltinAdministratorsSid, NULL, pSid, &cbSid)) {
-//		fprintf(stderr, "CreateWellKnownSid: error %d\n", GetLastError()); exit(-1);
-//	}
-//
-//	if (!CheckTokenMembership(NULL, pSid, &isAdmin)) {
-//		fprintf(stderr, "CheckTokenMembership: error %d\n", GetLastError()); exit(-1);
-//	}
-//
-//	if (!quiet) puts(isAdmin ? "Admin" : "Non-admin");
-//	return !isAdmin;
-//}
-#pragma endregion Original source
