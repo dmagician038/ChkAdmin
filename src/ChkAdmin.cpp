@@ -1,10 +1,11 @@
 ﻿// Solution:            ChkAdmin
-// Project:              ChkAdmin
+// Project:              ChkAdmin_CPP
 // FileName:          ChkAdmin.cpp
 // 
 // Written by:       Doron Barzilay (DoronB)
-// Creation date:  2021-10-24 15:16
-// Last update:     2021-10-24 15:16
+// Creation date:  2022-06-20 12:13
+// Last update:     2022-06-21 17:40
+
 #include <malloc.h>
 #include <cstdio>
 #include <Windows.h>
@@ -30,13 +31,12 @@ int main(int argc, char* argv[])
 
 	if (argc > 1)
 	{
-
 		if (std::regex_match(std::string(CT2CA(CString(argv[1]))),
-			std::regex(R"(^(((--)|[\-\/]?)(\?|h(elp)?))$)", std::regex_constants::icase)))
+		                     std::regex(R"(^(((--)|[\-\/]?)(\?|h(elp)?))$)", std::regex_constants::icase)))
 		{
 			fprintf(stderr,
-					#pragma region Usage (command... ..
-	R"(Usage (command line argument can start with either "--", "-" or "/"):
+#pragma region Usage (command... ..
+			        R"(Usage (command line argument can start with either "--", "-" or "/"):
 
 drive:\path\to\%s [-|--|/]<options>
 
@@ -44,7 +44,7 @@ drive:\path\to\%s [-|--|/]<options>
 -q(uiet)	- no output or keyboard waiting
 -p(ause)	- wait for a keypress on end
 )", argv[0]);
-					#pragma endregion .. ...on end
+#pragma endregion .. ...on end
 
 			return 0;
 		}
@@ -54,14 +54,14 @@ drive:\path\to\%s [-|--|/]<options>
 			if (!quiet)
 			{
 				quiet = std::regex_match(std::string(CT2CA(CString(argv[i]))),
-					std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase));
+				                         std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase));
 				break;
 			}
 
 			if (!pause)
 			{
 				pause = std::regex_match(std::string(CT2CA(CString(argv[i]))),
-					std::regex(R"(([\-\/])?(p)(ause)?)", std::regex_constants::icase));
+				                         std::regex(R"(([\-\/])?(p)(ause)?)", std::regex_constants::icase));
 			}
 		}
 	}

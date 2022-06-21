@@ -1,10 +1,11 @@
 ﻿// Solution:            ChkAdmin
-// Project:              ChkAdmin
-// FileName:          ChkAdmin.cpp
+// Project:              ChkAdmin_CXX
+// FileName:          ChkAdmin.cxx
 // 
 // Written by:       Doron Barzilay (DoronB)
-// Creation date:  2021-10-24 15:16
-// Last update:     2021-10-24 15:16
+// Creation date:  2022-06-20 12:13
+// Last update:     2022-06-21 17:41
+
 #include <malloc.h>
 #include <cstdio>
 #include <Windows.h>
@@ -34,7 +35,7 @@ int main(int argc, char* argv[])
 		//const std::regex pattern(/*"([\\-/])([Qq])([IiCcKk])"*/R"(([\-\/])?(q)(uick)?)", std::regex_constants::icase);
 
 		if (std::regex_match(std::string(CT2CA(CString(argv[1]))),
-			std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase)))
+		                     std::regex(R"(([\-\/])?(q)(uiet)?)", std::regex_constants::icase)))
 		{
 			quiet = true;
 		}
