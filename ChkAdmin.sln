@@ -14,7 +14,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChkAdmin_C", "ChkAdmin_C\Ch
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChkAdmin_CPP", "ChkAdmin_CPP\ChkAdmin_CPP.vcxproj", "{2DB79DB9-7A42-4321-AB22-57AD5311AE72}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChkAdmin_C", "ChkAdmin_CXX\ChkAdmin_CXX.vcxproj", "{82053571-3DC3-47CB-B6E8-635703332766}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChkAdmin_CXX", "ChkAdmin_CXX\ChkAdmin_CXX.vcxproj", "{82053571-3DC3-47CB-B6E8-635703332766}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
