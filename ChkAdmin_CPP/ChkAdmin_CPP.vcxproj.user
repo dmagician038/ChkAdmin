@@ -4,19 +4,27 @@
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommandArguments>/p</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>--VErbOSe</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>-t --test /t /test          -h --help /h /help          -v --verbose /v /verbose          -p --pause /p /pause
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LocalDebuggerCommandArguments>/p</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>--VErbOSe</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>-t --test /t /test          -h --help /h /help          -v --verbose /v /verbose          -p --pause /p /pause
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommandArguments>/p</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>--VErbOSe</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>-t --test /t /test          -h --help /h /help          -v --verbose /v /verbose          -p --pause /p /pause
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommandArguments>/p</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>--VErbOSe</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>-t --test /t /test          -h --help /h /help          -v --verbose /v /verbose          -p --pause /p /pause
+$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
   </PropertyGroup>
 </Project>
